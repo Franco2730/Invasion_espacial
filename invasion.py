@@ -17,7 +17,7 @@ fondo = pygame.image.load('fondo.jpg')
 
 # agregar musica
 mixer.music.load('MusicaFondo.mp3')
-mixer.music.set_volume(0.3)
+mixer.music.set_volume(0.2)
 mixer.music.play(-1)
 
 # variables del Jugador
@@ -42,6 +42,7 @@ for e in range(cantidad_enemigos):
     enemigo_y_cambio.append(50)
 
 # variables de la bala
+balas = []
 img_bala = pygame.image.load("bala.png")
 bala_x = 0
 bala_y = 500
@@ -86,7 +87,7 @@ def disparar_bala(x, y):
     bala_visible = True
     pantalla.blit(img_bala, (x + 16, y + 10))
 
-
+    
 # funcion detectar colisiones
 def hay_colision(x_1, y_1, x_2, y_2):
     distancia = math.sqrt(math.pow(x_1 - x_2, 2) + math.pow(y_2 - y_1, 2))
